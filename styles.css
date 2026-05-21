@@ -1,0 +1,272 @@
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f7f3ec;
+  color:#111;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:24px 8%;
+  background:#f5f1ea;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-family:'Abril Fatface',serif;
+  font-size:2rem;
+}
+
+.logo img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-weight:600;
+}
+
+.hero{
+  position:relative;
+  min-height:85vh;
+  background:
+  linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+  url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1600&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+}
+
+.hero-content{
+  padding:0 8%;
+  max-width:850px;
+  color:white;
+}
+
+.location{
+  letter-spacing:2px;
+  color:#f6c33b;
+  margin-bottom:18px;
+  font-weight:600;
+}
+
+.hero h1{
+  font-family:'Abril Fatface',serif;
+  font-size:5rem;
+  line-height:1;
+  margin-bottom:24px;
+}
+
+.subtitle{
+  font-size:1.3rem;
+  line-height:1.7;
+  max-width:650px;
+}
+
+.buttons{
+  display:flex;
+  gap:18px;
+  margin-top:36px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+
+.primary{
+  background:#d7a10d;
+  color:white;
+}
+
+.secondary{
+  border:2px solid white;
+  color:white;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  padding:70px 8%;
+}
+
+.feature-card{
+  background:white;
+  padding:32px;
+  border-radius:20px;
+  box-shadow:0 4px 18px rgba(0,0,0,.05);
+}
+
+.feature-card h3{
+  margin-bottom:14px;
+  font-family:'Abril Fatface',serif;
+  font-size:1.6rem;
+}
+
+.section-title{
+  padding:20px 8%;
+}
+
+.section-title p{
+  color:#c49408;
+  letter-spacing:2px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.section-title h2{
+  font-family:'Abril Fatface',serif;
+  font-size:4rem;
+}
+
+.lesson-grid,
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  padding:30px 8% 80px;
+}
+
+.lesson-card,
+.event-card{
+  background:white;
+  border-radius:22px;
+  padding:36px;
+  box-shadow:0 4px 18px rgba(0,0,0,.05);
+}
+
+.lesson-card h3,
+.event-card h3{
+  font-family:'Abril Fatface',serif;
+  font-size:2rem;
+  margin-bottom:18px;
+}
+
+.featured{
+  background:#111;
+  color:white;
+}
+
+.price{
+  font-size:3rem;
+  font-weight:800;
+  color:#d7a10d;
+  margin-bottom:20px;
+}
+
+.price span{
+  font-size:1rem;
+  color:inherit;
+}
+
+.lesson-card ul{
+  margin-top:24px;
+  padding-left:18px;
+  line-height:2;
+}
+
+.tag{
+  display:inline-block;
+  background:#d7a10d;
+  color:white;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:.8rem;
+  margin-bottom:18px;
+}
+
+.about{
+  padding:100px 8%;
+  background:#111;
+  color:white;
+  text-align:center;
+}
+
+.about h2{
+  font-family:'Abril Fatface',serif;
+  font-size:4rem;
+  margin-bottom:24px;
+}
+
+.about p{
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+  font-size:1.1rem;
+}
+
+.contact{
+  text-align:center;
+  padding:100px 8%;
+}
+
+.contact h2{
+  font-family:'Abril Fatface',serif;
+  font-size:4rem;
+  margin-bottom:18px;
+}
+
+.contact p{
+  margin-bottom:28px;
+  font-size:1.1rem;
+}
+
+footer{
+  padding:30px;
+  text-align:center;
+  background:#eee7dc;
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:3.2rem;
+  }
+
+  .section-title h2,
+  .about h2,
+  .contact h2{
+    font-size:2.7rem;
+  }
+
+  .navbar{
+    flex-direction:column;
+    gap:18px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+}
