@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lessons | Creative Corner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--cream:#f8f2e8;--ink:#090909;--gold:#c89512;--green:#8fbd00;--blue:#1f55d5;--muted:#5f5a52}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+    .navbar{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 7%;background:#f6efe3;border-bottom:1px solid #e5d7be;position:sticky;top:0;z-index:100}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+    .brand img{width:46px;height:46px;object-fit:contain;border-radius:50%}
+    .brand span{font-family:'Abril Fatface',serif;font-size:2rem}
+    .nav-links{display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+    .nav-links a{color:#2d2a26;text-decoration:none;font-weight:700;font-size:.95rem}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .hero{min-height:58vh;display:flex;align-items:center;padding:90px 7%;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.45),rgba(0,0,0,.2)),url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1800&auto=format&fit=crop');background-position:center;background-size:cover;color:white;position:relative}
+    .hero:after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:90px;background:linear-gradient(to bottom,transparent,var(--cream))}
+    .hero-content{max-width:820px;position:relative;z-index:2}
+    .eyebrow{color:#ffd15b;letter-spacing:2.5px;font-weight:800;text-transform:uppercase;margin-bottom:16px}
+    h1,h2,h3,.brand span{font-family:'Abril Fatface',serif;line-height:1}
+    .hero h1{font-size:clamp(3.2rem,8vw,7rem);margin-bottom:22px}
+    .hero p{font-size:1.2rem;max-width:650px;color:#f1eee8;margin-bottom:32px}
+    .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:10px;text-decoration:none;font-weight:800;border:0;cursor:pointer;font-size:1rem;transition:.25s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--gold);color:white}.btn-dark{background:var(--ink);color:white}
+    .page-intro{padding:70px 7% 20px;max-width:1080px}
+    .page-intro h2{font-size:clamp(2.5rem,5vw,4.5rem);margin-bottom:18px}
+    .page-intro p{color:var(--muted);font-size:1.08rem;max-width:780px}
+    .lesson-section{padding:70px 7%}
+    .section-heading{margin-bottom:34px}.section-heading .label{font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:8px}
+    .music .label,.music .check{color:var(--green)}.art .label,.art .check{color:var(--gold)}.pottery .label,.pottery .check{color:var(--blue)}
+    .section-heading h2{font-size:clamp(3rem,6vw,5.2rem);margin-bottom:18px}
+    .paint-line{width:310px;height:9px;border-radius:999px;background:var(--gold);opacity:.75}.music .paint-line{background:var(--green)}.pottery .paint-line{background:var(--blue)}
+    .section-layout{display:grid;grid-template-columns:1fr 440px;gap:36px;align-items:start}.section-layout.reverse{grid-template-columns:440px 1fr}
+    .lesson-list{display:grid;gap:16px}
+    .lesson-card{background:#fbf6ed;border:1px solid #eadcc2;border-radius:8px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;min-height:94px}
+    .check{font-size:1.4rem;font-weight:900;line-height:1.2;margin-top:2px}
+    .lesson-card h3{font-size:1.55rem;margin-bottom:6px}.lesson-card p{color:#231f1a;font-size:.98rem}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;min-width:140px}.badge{background:#fffaf2;border:1px solid #eadcc2;border-radius:7px;padding:5px 10px;font-size:.85rem;color:#1f1b17;white-space:nowrap}
+    .side-image{width:100%;min-height:460px;border-radius:8px;object-fit:cover;box-shadow:0 12px 35px rgba(0,0,0,.08)}
+    .price-card{background:#fbf6ed;border:1px solid #eadcc2;border-radius:8px;padding:44px;min-height:460px;display:flex;flex-direction:column;justify-content:center}
+    .price-label{color:var(--gold);letter-spacing:2.5px;font-weight:800;text-transform:uppercase;margin-bottom:8px}.music .price-label{color:var(--green)}.pottery .price-label{color:var(--blue)}
+    .price-card h3{font-size:clamp(3rem,5vw,5rem);margin-bottom:4px}.price-card .sub{font-size:1.1rem;margin-bottom:26px}
+    .price-card ul{list-style:none;display:grid;gap:12px;margin-bottom:30px}.price-card li{display:flex;align-items:center;gap:12px;font-size:1rem}
+    .contact-wrap{padding:80px 7% 100px;background:#111;color:white}.form-grid{display:grid;grid-template-columns:430px 1fr;gap:36px;max-width:1220px;margin:auto}
+    .contact-info,.form-card{border-radius:22px;padding:38px}.contact-info{background:linear-gradient(135deg,rgba(204,27,140,.88),rgba(31,85,213,.88),rgba(143,189,0,.88)),url('https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1200&auto=format&fit=crop');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:flex-end;min-height:520px}
+    .contact-info h2,.form-card h2{font-size:clamp(2.8rem,5vw,4.4rem);margin-bottom:16px}.contact-info p{font-size:1.08rem;color:#fff8ec;max-width:360px}
+    .form-card{background:#fbf6ed;color:#111}.form-card h2{font-size:3rem}.form-card p{color:var(--muted);margin-bottom:28px}
+    form{display:grid;gap:16px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{font-weight:800;font-size:.9rem;display:block;margin-bottom:6px}
+    input,select,textarea{width:100%;border:1px solid #dcccae;background:#fffaf2;border-radius:9px;padding:14px;font:inherit;color:#111}textarea{min-height:130px;resize:vertical}
+    .form-note{font-size:.84rem;color:#686057;margin-top:8px}footer{padding:34px 7%;background:#070707;color:#c7c2ba;text-align:center}
+    @media(max-width:1000px){.section-layout,.section-layout.reverse,.form-grid{grid-template-columns:1fr}.section-layout.reverse .side-image{order:2}.price-card,.side-image,.contact-info{min-height:auto}}
+    @media(max-width:760px){.navbar{flex-direction:column;align-items:flex-start}.brand span{font-size:1.7rem}.nav-links{gap:16px}.lesson-card{grid-template-columns:auto 1fr}.badges{grid-column:2;justify-content:flex-start;min-width:auto}.form-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Creative Corner logo"><span>Creative Corner</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a><a class="active" href="lessons.html">Lessons</a><a href="birthdays.html">Birthday Parties</a><a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">✦ Private Weekly Lessons</div>
+      <h1>Art, Music & Pottery Lessons</h1>
+      <p>One-on-one creative instruction for kids, teens, and adults. Choose your focus, meet weekly, and grow with a supportive instructor.</p>
+      <div class="hero-buttons"><a class="btn btn-gold" href="#booking">Book a Lesson</a></div>
+    </div>
+  </section>
+
+  <section class="page-intro"><h2>Explore our private lessons</h2><p>Creative Corner offers personalized weekly lessons in music, visual art, and pottery. Each lesson is designed around the student’s goals, age, interests, and skill level.</p></section>
+
+  <section class="lesson-section music" id="music">
+    <div class="section-heading"><div class="label">♫ Music</div><h2>Music Lessons</h2><div class="paint-line"></div></div>
+    <div class="section-layout">
+      <div class="lesson-list">
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Guitar</h3><p>Acoustic or electric — learn chords, strumming, fingerpicking, and your favorite songs.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Piano & Keyboard</h3><p>Classical foundations, pop, jazz, or playing by ear — we meet students where they are.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Voice & Singing</h3><p>Develop range, breath control, confidence, and stage presence with one-on-one coaching.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Bass Guitar</h3><p>Learn groove, rhythm, and technique — the backbone of every great band.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Ukulele</h3><p>A joyful, approachable instrument perfect for beginners and younger students.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Drums</h3><p>Learn rhythm, coordination, and groove — from basic beats to full drum kit technique.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Violin</h3><p>Classical and contemporary technique for one of the most expressive instruments.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Cello</h3><p>Rich, resonant, and deeply rewarding — cello lessons for beginners through advanced players.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Flute</h3><p>Breath, tone, and technique — learn the fundamentals of this beautiful woodwind instrument.</p></div><div class="badges"><span class="badge">Ages 4+</span><span class="badge">30 min</span></div></article>
+      </div>
+      <aside class="price-card"><div class="price-label">Music Pricing</div><h3>$45</h3><p class="sub">30-minute weekly private lesson</p><ul><li><span class="check">✓</span> One-on-one instruction</li><li><span class="check">✓</span> Beginner to advanced</li><li><span class="check">✓</span> Same instructor each week</li><li><span class="check">✓</span> Multiple instruments available</li></ul><a class="btn btn-dark" href="#booking">Book Music Lessons →</a></aside>
+    </div>
+  </section>
+
+  <section class="lesson-section art" id="art">
+    <div class="section-heading"><div class="label">✎ Art</div><h2>Art Lessons</h2><div class="paint-line"></div></div>
+    <div class="section-layout reverse">
+      <img class="side-image" src="art-lesson-waterfall.jpeg" alt="Waterfall painting">
+      <div class="lesson-list">
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Drawing & Sketching</h3><p>Build foundational skills in line, form, shading, perspective, and composition.</p></div><div class="badges"><span class="badge">All ages</span><span class="badge">60 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Watercolor Painting</h3><p>Explore watercolor — from soft washes to detailed illustration.</p></div><div class="badges"><span class="badge">All ages</span><span class="badge">60 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Acrylic & Oil Painting</h3><p>Learn color mixing, layering, brushwork, and technique with acrylic or oil mediums.</p></div><div class="badges"><span class="badge">All ages</span><span class="badge">60 min</span></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Mixed Media & Collage</h3><p>Combine materials, textures, and found objects into expressive, layered artwork.</p></div><div class="badges"><span class="badge">All ages</span><span class="badge">60 min</span></div></article>
+        <aside class="price-card"><div class="price-label">Art Pricing</div><h3>$60</h3><p class="sub">60-minute weekly private lesson</p><ul><li><span class="check">✓</span> Materials included</li><li><span class="check">✓</span> Painting, drawing, and mixed media</li><li><span class="check">✓</span> Personalized creative projects</li><li><span class="check">✓</span> All ages and skill levels</li></ul><a class="btn btn-gold" href="#booking">Book Art Lessons →</a></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section pottery" id="pottery">
+    <div class="section-heading"><div class="label">◯ Pottery</div><h2>Pottery Lessons</h2><div class="paint-line"></div></div>
+    <div class="section-layout">
+      <div class="lesson-list">
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Throwing on the Wheel</h3><p>Learn to center clay and pull up walls on the pottery wheel.</p></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Hand-Building</h3><p>Create sculptural and functional forms using hand-building techniques.</p></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Coil Building</h3><p>Build vessels and sculptures by stacking and blending coils of clay.</p></div></article>
+        <article class="lesson-card"><div class="check">✓</div><div><h3>Slab Construction</h3><p>Roll out slabs of clay and construct plates, tiles, boxes, and more.</p></div></article>
+      </div>
+      <aside class="price-card"><div class="price-label">Pottery Pricing</div><h3>$275</h3><p class="sub">4-lesson package</p><ul><li><span class="check">✓</span> 4 lessons included</li><li><span class="check">✓</span> Pottery wheel instruction</li><li><span class="check">✓</span> Kiln firings</li><li><span class="check">✓</span> All materials provided</li></ul><a class="btn btn-dark" href="#booking">Book Pottery Lessons →</a></aside>
+    </div>
+  </section>
+
+  <section class="contact-wrap" id="booking">
+    <div class="form-grid">
+      <div class="contact-info"><h2>Ready to start?</h2><p>Fill out the form and we’ll follow up about availability, scheduling, and the best lesson fit.</p></div>
+      <div class="form-card">
+        <h2>Book a Lesson</h2><p>Send a lesson inquiry to Creative Corner.</p>
+        <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Creative Corner Lesson Inquiry"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
+          <div class="form-row"><div><label for="name">Your Name</label><input id="name" name="Name" type="text" required></div><div><label for="email">Email</label><input id="email" name="Email" type="email" required></div></div>
+          <div class="form-row"><div><label for="phone">Phone</label><input id="phone" name="Phone" type="tel"></div><div><label for="student-age">Student Age</label><input id="student-age" name="Student Age" type="text" placeholder="Example: 8 years old"></div></div>
+          <div class="form-row"><div><label for="program">Lesson Type</label><select id="program" name="Lesson Type" required><option value="">Choose one</option><option>Music Lessons</option><option>Art Lessons</option><option>Pottery Lessons</option><option>Not sure yet</option></select></div><div><label for="instrument">Instrument / Medium</label><input id="instrument" name="Instrument or Medium" type="text" placeholder="Guitar, piano, painting..."></div></div>
+          <div><label for="message">Message</label><textarea id="message" name="Message" placeholder="Tell us about your goals, availability, or questions."></textarea></div>
+          <button class="btn btn-gold" type="submit">Send Booking Inquiry</button>
+          <p class="form-note">Note: the first time this form is used, FormSubmit may send a confirmation email to creativecorner482@gmail.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Creative Corner • Art, Music & Pottery Lessons</footer>
+</body>
+</html>
