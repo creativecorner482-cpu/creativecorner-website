@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Creative Corner</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .contact-page {
+      padding: 120px 8%;
+      background: #f5f1e8;
+      min-height: 100vh;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 50px;
+    }
+
+    .contact-card,
+    .form-card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .contact-page h1 {
+      font-family: 'Abril Fatface', serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .contact-page p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+    }
+
+    .contact-info p {
+      margin-bottom: 20px;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 20px;
+      background: #111;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .form-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input,
+    textarea {
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-page h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="Creative Corner logo">
+    <span>Creative Corner</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="lessons.html">Lessons</a>
+    <a href="events.html">Events</a>
+    <a href="birthdays.html">Parties</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="contact-page">
+
+  <p style="letter-spacing:3px; color:#b08d2f;">GET IN TOUCH</p>
+  <h1>Contact Us</h1>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+
+      <p>
+        We'd love to hear from you. Reach out with questions about lessons,
+        parties, workshops, or upcoming events.
+      </p>
+
+      <div class="contact-info">
+
+        <p>
+          <strong>Address:</strong><br>
+          482 Hempstead Avenue<br>
+          West Hempstead, NY 11552
+        </p>
+
+        <p>
+          <strong>Phone:</strong><br>
+          (516) 385-8782
+        </p>
+
+        <p>
+          <strong>Email:</strong><br>
+          creativecorner482@gmail.com
+        </p>
+
+        <a
+          class="map-link"
+          href="https://maps.google.com/?q=482+Hempstead+Avenue+West+Hempstead+NY+11552"
+          target="_blank"
+        >
+          Open in Google Maps
+        </a>
+
+      </div>
+    </div>
+
+    <div class="form-card">
+
+      <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <input type="text" name="subject" placeholder="Subject">
+
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <input type="hidden" name="_captcha" value="false">
+
+        <button type="submit">Send Message</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
