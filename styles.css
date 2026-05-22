@@ -303,5 +303,39 @@ footer{
   .social-btn {
   overflow: hidden;
 }
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px 0 50px;
+}
+
+.social-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.social-btn:hover {
+  transform: translateY(-4px);
+}
+
+.social-btn img {
+  width: 22px !important;
+  height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  object-fit: contain;
+  display: block;
+}
+
 }
 
