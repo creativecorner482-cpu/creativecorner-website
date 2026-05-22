@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Events | Creative Corner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+      --cream:#f8f2e8;
+      --ink:#090909;
+      --gold:#c89512;
+      --green:#8fbd00;
+      --pink:#cc1b8c;
+      --blue:#1f55d5;
+      --muted:#5f5a52;
+      --card:#fbf6ed;
+      --border:#eadcc2;
+    }
+
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
+      padding:24px 7%;
+      background:#f6efe3;
+      border-bottom:1px solid #e5d7be;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:var(--ink);
+    }
+
+    .brand img{
+      width:46px;
+      height:46px;
+      object-fit:contain;
+      border-radius:50%;
+    }
+
+    .brand span,
+    h1,
+    h2,
+    h3{
+      font-family:'Abril Fatface',serif;
+      line-height:1;
+    }
+
+    .brand span{font-size:2rem}
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#2d2a26;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{color:var(--gold)}
+
+    .hero{
+      min-height:58vh;
+      display:flex;
+      align-items:center;
+      padding:90px 7%;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.42),rgba(0,0,0,.18)),
+        url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1800&auto=format&fit=crop');
+      background-position:center;
+      background-size:cover;
+      color:white;
+      position:relative;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      bottom:-1px;
+      left:0;
+      width:100%;
+      height:90px;
+      background:linear-gradient(to bottom,transparent,var(--cream));
+    }
+
+    .hero-content{
+      max-width:850px;
+      position:relative;
+      z-index:2;
+    }
+
+    .eyebrow{
+      color:#ffd15b;
+      letter-spacing:2.5px;
+      font-weight:800;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      font-size:clamp(3.2rem,8vw,7rem);
+      margin-bottom:22px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      max-width:650px;
+      color:#f1eee8;
+      margin-bottom:32px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 26px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:800;
+      border:0;
+      cursor:pointer;
+      font-size:1rem;
+      transition:.25s;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--gold);color:white}
+    .btn-dark{background:var(--ink);color:white}
+    .btn-pink{background:var(--pink);color:white}
+    .btn-blue{background:var(--blue);color:white}
+
+    .intro{
+      padding:70px 7% 20px;
+      max-width:1080px;
+    }
+
+    .intro h2{
+      font-size:clamp(2.5rem,5vw,4.5rem);
+      margin-bottom:18px;
+    }
+
+    .intro p{
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:780px;
+    }
+
+    .events-wrap{
+      padding:40px 7% 90px;
+      display:grid;
+      gap:42px;
+    }
+
+    .event-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:420px 1fr;
+      box-shadow:0 12px 35px rgba(0,0,0,.06);
+    }
+
+    .event-poster{
+      min-height:520px;
+      background:#eee;
+    }
+
+    .event-poster img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .event-info{
+      padding:46px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .event-meta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      background:#fffaf2;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:.9rem;
+      font-weight:800;
+    }
+
+    .pill.gold{color:var(--gold)}
+    .pill.green{color:var(--green)}
+    .pill.pink{color:var(--pink)}
+    .pill.blue{color:var(--blue)}
+
+    .event-info h2{
+      font-size:clamp(2.7rem,5vw,5rem);
+      margin-bottom:18px;
+    }
+
+    .event-info p{
+      color:#2a251f;
+      font-size:1.05rem;
+      max-width:720px;
+      margin-bottom:26px;
+    }
+
+    .details{
+      display:grid;
+      gap:12px;
+      margin-bottom:30px;
+    }
+
+    .detail{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      font-weight:700;
+    }
+
+    .detail span:first-child{
+      color:var(--gold);
+      font-weight:900;
+      min-width:24px;
+    }
+
+    .price{
+      font-family:'Abril Fatface',serif;
+      font-size:3rem;
+      line-height:1;
+      margin:6px 0 24px;
+    }
+
+    .open-mic{border-top:8px solid var(--pink)}
+    .mono{border-top:8px solid var(--green)}
+    .sumi{border-top:8px solid var(--blue)}
+
+    .cta-section{
+      margin:0 7% 90px;
+      padding:80px 40px;
+      border-radius:28px;
+      background:linear-gradient(135deg,var(--pink),var(--blue),var(--green),var(--gold));
+      color:white;
+      text-align:center;
+    }
+
+    .cta-section h2{
+      font-size:clamp(2.8rem,5vw,5rem);
+      margin-bottom:18px;
+    }
+
+    .cta-section p{
+      max-width:700px;
+      margin:0 auto 28px;
+      font-size:1.1rem;
+    }
+
+    footer{
+      padding:34px 7%;
+      background:#070707;
+      color:#c7c2ba;
+      text-align:center;
+    }
+
+    @media(max-width:1000px){
+      .event-card{
+        grid-template-columns:1fr;
+      }
+
+      .event-poster{
+        min-height:auto;
+      }
+
+      .event-poster img{
+        height:auto;
+      }
+    }
+
+    @media(max-width:760px){
+      .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .brand span{font-size:1.7rem}
+      .nav-links{gap:16px}
+      .event-info{padding:30px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Creative Corner logo">
+      <span>Creative Corner</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="lessons.html">Lessons</a>
+      <a class="active" href="events.html">Events</a>
+      <a href="birthdays.html">Birthday Parties</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">✦ What’s Happening</div>
+      <h1>Upcoming Events</h1>
+      <p>
+        Join us for creative community nights, workshops, music, and hands-on art experiences
+        at Creative Corner.
+      </p>
+      <a class="btn btn-gold" href="#events">View Events</a>
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Creative nights at the studio</h2>
+    <p>
+      From open mic nights to printmaking and sumi-e painting, our events are designed to bring
+      artists, musicians, and neighbors together in a welcoming creative space.
+    </p>
+  </section>
+
+  <main class="events-wrap" id="events">
+
+    <article class="event-card open-mic">
+      <div class="event-poster">
+        <img src="openmic.png" alt="Open Mic event poster">
+      </div>
+
+      <div class="event-info">
+        <div class="event-meta">
+          <span class="pill pink">Music</span>
+          <span class="pill">May 22, 2026</span>
+          <span class="pill">8:00 PM</span>
+        </div>
+
+        <h2>Open Mic Night</h2>
+
+        <p>
+          Take the stage or come cheer on local performers. Bring your voice, instrument,
+          poetry, comedy, or original songs for a fun community night at Creative Corner.
+        </p>
+
+        <div class="details">
+          <div class="detail"><span>✓</span><span>May 22 at 8:00 PM</span></div>
+          <div class="detail"><span>✓</span><span>482 Hempstead Avenue, West Hempstead, NY 11552</span></div>
+          <div class="detail"><span>✓</span><span>All performers and audience members welcome</span></div>
+        </div>
+
+        <a class="btn btn-pink" href="mailto:creativecorner482@gmail.com?subject=Open%20Mic%20RSVP">RSVP by Email →</a>
+      </div>
+    </article>
+
+    <article class="event-card mono">
+      <div class="event-poster">
+        <img src="mono-printing.png" alt="Mono-printing with Bob event poster">
+      </div>
+
+      <div class="event-info">
+        <div class="event-meta">
+          <span class="pill green">Art Workshop</span>
+          <span class="pill">June 1, 2026</span>
+          <span class="pill">7:00 PM</span>
+        </div>
+
+        <h2>Mono-Printing with Bob</h2>
+
+        <p>
+          An introduction to the printing process, building layers, and using different
+          techniques. This event can expand into woodcut printing and beyond.
+        </p>
+
+        <div class="price">$35 per person</div>
+
+        <div class="details">
+          <div class="detail"><span>✓</span><span>June 1 at 7:00 PM</span></div>
+          <div class="detail"><span>✓</span><span>Ages 10+</span></div>
+          <div class="detail"><span>✓</span><span>482 West Hempstead Avenue, West Hempstead, NY 11552</span></div>
+        </div>
+
+        <a class="btn btn-dark" href="mailto:creativecorner482@gmail.com?subject=Mono-Printing%20RSVP">RSVP by Email →</a>
+      </div>
+    </article>
+
+    <article class="event-card sumi">
+      <div class="event-poster">
+        <img src="sumi-e.png" alt="Sumi-e Paint Night event poster">
+      </div>
+
+      <div class="event-info">
+        <div class="event-meta">
+          <span class="pill blue">Paint Night</span>
+          <span class="pill">June 20, 2026</span>
+          <span class="pill">7:00 PM</span>
+        </div>
+
+        <h2>Sumi-e Paint Night</h2>
+
+        <p>
+          Learn the Japanese art of ink painting in a guided workshop hosted by Ed Hug.
+          A beautiful and expressive evening for anyone interested in art and brushwork.
+        </p>
+
+        <div class="price">$35 per person</div>
+
+        <div class="details">
+          <div class="detail"><span>✓</span><span>June 20 at 7:00 PM</span></div>
+          <div class="detail"><span>✓</span><span>Hosted by Ed Hug</span></div>
+          <div class="detail"><span>✓</span><span>Creative Corner, 482 Hempstead Ave, West Hempstead, NY</span></div>
+        </div>
+
+        <a class="btn btn-blue" href="mailto:creativecorner482@gmail.com?subject=Sumi-e%20Paint%20Night%20RSVP">RSVP by Email →</a>
+      </div>
+    </article>
+
+  </main>
+
+  <section class="cta-section">
+    <h2>Want to join us?</h2>
+    <p>
+      RSVP for an upcoming event or contact Creative Corner with questions about workshops,
+      private lessons, or parties.
+    </p>
+    <a class="btn btn-dark" href="mailto:creativecorner482@gmail.com?subject=Creative%20Corner%20Event%20Question">Contact Us →</a>
+  </section>
+
+  <footer>
+    © 2026 Creative Corner • Upcoming Events
+  </footer>
+
+</body>
+</html>
