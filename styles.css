@@ -337,5 +337,26 @@ footer{
   display: block;
 }
 
+  .cc-socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 10px 0 50px;
+}
+
+.cc-social-btn {
+  background: white;
+  color: #111;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.cc-social-btn:hover {
+  transform: translateY(-3px);
+}
+
 }
 
