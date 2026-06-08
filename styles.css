@@ -293,4 +293,12 @@ footer{
   scroll-snap-align: start;
   box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
+  .cc-gallery-scroll img {
+  width: 260px !important;
+  height: 190px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
+  max-height: 190px !important;
+  object-fit: cover !important;
+}
 
