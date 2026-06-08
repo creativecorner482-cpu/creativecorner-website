@@ -270,27 +270,27 @@ footer{
     justify-content:center;
   }
 
-  .gallery-section {
+.cc-gallery-section {
   padding: 80px 8%;
   background: #f7f3ec;
 }
 
-.gallery-scroll {
-  display: flex;
+.cc-gallery-scroll {
+  display: flex !important;
   gap: 22px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   padding: 10px 0 24px;
+  scroll-snap-type: x mandatory;
 }
 
-.gallery-scroll img {
+.cc-gallery-scroll img {
   width: 320px !important;
   height: 240px !important;
-  min-width: 320px;
-  object-fit: cover;
+  min-width: 320px !important;
+  max-width: 320px !important;
+  object-fit: cover !important;
   border-radius: 20px;
   scroll-snap-align: start;
   box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
-
 
