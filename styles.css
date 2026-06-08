@@ -269,7 +269,8 @@ footer{
     flex-wrap:wrap;
     justify-content:center;
   }
-.gallery-section {
+
+  .gallery-section {
   padding: 80px 8%;
   background: #f7f3ec;
 }
@@ -283,21 +284,13 @@ footer{
 }
 
 .gallery-scroll img {
+  width: 320px !important;
+  height: 240px !important;
   min-width: 320px;
-  height: 240px;
   object-fit: cover;
   border-radius: 20px;
   scroll-snap-align: start;
   box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
-
-.gallery-scroll::-webkit-scrollbar {
-  height: 10px;
-}
-
-.gallery-scroll::-webkit-scrollbar-thumb {
-  background: #c89512;
-  border-radius: 999px;
-} 
 
 
