@@ -301,4 +301,23 @@ footer{
   max-height: 190px !important;
   object-fit: cover !important;
 }
+  .cc-gallery-scroll {
+  display: flex !important;
+  gap: 18px !important;
+  overflow-x: auto !important;
+  align-items: center !important;
+}
+
+.cc-gallery-scroll img,
+.cc-gallery-section img {
+  width: 260px !important;
+  height: 190px !important;
+  min-width: 260px !important;
+  max-width: 260px !important;
+  min-height: 190px !important;
+  max-height: 190px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 18px !important;
+}
 
