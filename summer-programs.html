@@ -1,17 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Summer Programs | Creative Corner</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+      --cream:#f8f2e8;
+      --ink:#090909;
+      --gold:#c89512;
+      --green:#8fbd00;
+      --pink:#cc1b8c;
+      --blue:#1f55d5;
+      --muted:#5f5a52;
+      --card:#fbf6ed;
+      --border:#eadcc2;
+    }
+
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
+      padding:24px 7%;
+      background:#f6efe3;
+      border-bottom:1px solid #e5d7be;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:var(--ink);
+    }
+
+    .brand img{
+      width:46px;
+      height:46px;
+      object-fit:contain;
+      border-radius:50%;
+    }
+
+    .brand span,
+    h1,
+    h2,
+    h3{
+      font-family:'Abril Fatface',serif;
+      line-height:1;
+    }
+
+    .brand span{font-size:2rem}
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#2d2a26;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{color:var(--gold)}
+
+    .hero{
+      min-height:58vh;
+      display:flex;
+      align-items:center;
+      padding:90px 7%;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.42),rgba(0,0,0,.18)),
+        url('https://images.unsplash.com/photo-1498747946579-bde604cb8f44?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-position:center;
+      background-size:cover;
+      color:white;
+      position:relative;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      bottom:-1px;
+      left:0;
+      width:100%;
+      height:90px;
+      background:linear-gradient(to bottom,transparent,var(--cream));
+    }
+
+    .hero-content{
+      max-width:850px;
+      position:relative;
+      z-index:2;
+    }
+
+    .eyebrow{
+      color:#ffd15b;
+      letter-spacing:2.5px;
+      font-weight:800;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      font-size:clamp(3.2rem,8vw,7rem);
+      margin-bottom:22px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      max-width:650px;
+      color:#f1eee8;
+      margin-bottom:32px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 26px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:800;
+      border:0;
+      cursor:pointer;
+      font-size:1rem;
+      transition:.25s;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--gold);color:white}
+    .btn-dark{background:var(--ink);color:white}
+    .btn-pink{background:var(--pink);color:white}
+    .btn-blue{background:var(--blue);color:white}
+
+    .intro{
+      padding:70px 7% 20px;
+      max-width:1080px;
+    }
+
+    .intro h2{
+      font-size:clamp(2.5rem,5vw,4.5rem);
+      margin-bottom:18px;
+    }
+
+    .intro p{
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:780px;
+    }
+
+    .events-wrap{
+      padding:40px 7% 90px;
+      display:grid;
+      gap:42px;
+    }
+
+    .event-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:420px 1fr;
+      box-shadow:0 12px 35px rgba(0,0,0,.06);
+    }
+
+    .event-poster{
+      min-height:520px;
+      background:#eee;
+    }
+
+    .event-poster img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .event-info{
+      padding:46px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .event-meta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      background:#fffaf2;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:.9rem;
+      font-weight:800;
+    }
+
+    .pill.gold{color:var(--gold)}
+    .pill.green{color:var(--green)}
+    .pill.pink{color:var(--pink)}
+    .pill.blue{color:var(--blue)}
+
+    .event-info h2{
+      font-size:clamp(2.7rem,5vw,5rem);
+      margin-bottom:18px;
+    }
+
+    .event-info p{
+      color:#2a251f;
+      font-size:1.05rem;
+      max-width:720px;
+      margin-bottom:26px;
+    }
+
+    .details{
+      display:grid;
+      gap:12px;
+      margin-bottom:30px;
+    }
+
+    .detail{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      font-weight:700;
+    }
+
+    .detail span:first-child{
+      color:var(--gold);
+      font-weight:900;
+      min-width:24px;
+    }
+
+    .price{
+      font-family:'Abril Fatface',serif;
+      font-size:3rem;
+      line-height:1;
+      margin:6px 0 24px;
+    }
+
+    .open-mic{border-top:8px solid var(--pink)}
+    .mono{border-top:8px solid var(--green)}
+    .sumi{border-top:8px solid var(--blue)}
+
+    .cta-section{
+      margin:0 7% 90px;
+      padding:80px 40px;
+      border-radius:28px;
+      background:linear-gradient(135deg,var(--pink),var(--blue),var(--green),var(--gold));
+      color:white;
+      text-align:center;
+    }
+
+    .cta-section h2{
+      font-size:clamp(2.8rem,5vw,5rem);
+      margin-bottom:18px;
+    }
+
+    .cta-section p{
+      max-width:700px;
+      margin:0 auto 28px;
+      font-size:1.1rem;
+    }
+
+    footer{
+      padding:34px 7%;
+      background:#070707;
+      color:#c7c2ba;
+      text-align:center;
+    }
+
+    @media(max-width:1000px){
+      .event-card{
+        grid-template-columns:1fr;
+      }
+
+      .event-poster{
+        min-height:auto;
+      }
+
+      .event-poster img{
+        height:auto;
+      }
+    }
+
+    @media(max-width:760px){
+      .navbar{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .brand span{font-size:1.7rem}
+      .nav-links{gap:16px}
+      .event-info{padding:30px}
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Summer Programs</h1>
-<p>Summer workshops, camps, and creative experiences coming soon!</p>
+  <header class="navbar">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Creative Corner logo">
+      <span>Creative Corner</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="lessons.html">Lessons</a>
+      <a href="events.html">Events</a>
+      <a class="active" href="summer-programs.html">Summer Programs</a>
+      <a href="parties.html">Parties</a>      
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">✦ What’s Happening</div>
+      <h1>Summer Programs</h1>
+      <p>
+        Workshops, camps, open studio nights, and special creative events all summer long.
+      </p>
+    </div>
+  </section>
+
+  <main class="events-wrap" id="events">
+
+<article class="event-card">
+  <div class="event-poster">
+    <img src="3d-design-workshop.png" alt="3D Design Workshop">
+  </div>
+
+  <div class="event-info">
+    <span class="event-date">
+      Summer Thursdays • July 2 – August 6 • 12:00–1:30 PM
+    </span>
+
+    <h3>3D Design Workshop</h3>
+
+    <p>
+      Learn how to create, model, and render your own 3D designs using Blender software
+      and 3D printing techniques. This summer workshop is perfect for creative students
+      interested in digital design and hands-on making.
+    </p>
+
+    <ul class="event-details">
+      <li>✓ Rendering for beginners</li>
+      <li>✓ Use of Blender software</li>
+      <li>✓ Use of 3D printer</li>
+      <li>✓ Ages 10+</li>
+      <li>✓ Students must bring their own personal tablet or laptop</li>
+      <li>✓ 5 spots available</li>
+    </ul>
+
+    <div class="event-price">
+      $180 for 6 classes
+    </div>
+  </div>
+</article>
+
+<article class="event-card">
+  <div class="event-poster">
+    <img src="art-bar.png" alt="Sunday Night Art Bar">
+  </div>
+
+  <div class="event-info">
+    <span class="event-date">
+      Summer Sundays • June 14 – August 30 • 6:00–9:00 PM
+    </span>
+
+    <h3>Sunday Night Art Bar</h3>
+
+    <p>
+      Art Bar is an open studio night where you can explore painting, drawing,
+      mixed media, and more using our shared materials. Come alone or bring a friend
+      for a relaxed creative evening.
+    </p>
+
+    <ul class="event-details">
+      <li>✓ Open studio night</li>
+      <li>✓ Painting, drawing, mixed media, and more</li>
+      <li>✓ Shared art materials available</li>
+      <li>✓ Additional $5 fee for pottery studio</li>
+      <li>✓ Ages 18+ unless accompanied by chaperone</li>
+    </ul>
+
+    <div class="event-price">
+      $25 per person
+    </div>
+  </div>
+</article>
+
+  </main>
+
+  <section class="cta-section">
+    <h2>Want to join us?</h2>
+    <p>
+      Sign-up here or contact Creative Corner with questions.
+    </p>
+      <a href="contact.html" class="btn primary">
+  Contact Us
+  </a>
+  </section>
+
+  <footer>
+    © 2026 Creative Corner • Summer Programs
+  </footer>
 
 </body>
 </html>
+
 
 
