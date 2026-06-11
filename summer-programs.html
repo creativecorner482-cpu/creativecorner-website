@@ -427,15 +427,78 @@
 
   </main>
 
-  <section class="cta-section">
-    <h2>Want to join us?</h2>
-    <p>
-      Sign-up here or contact Creative Corner with questions.
-    </p>
-      <a href="contact.html" class="btn primary">
-  Contact Us
-  </a>
-  </section>
+<section class="contact-form-section">
+  <div class="container">
+
+    <div class="section-title">
+      <p>REGISTER TODAY</p>
+      <h2>Summer Program Inquiry</h2>
+      <p>
+        Interested in one of our summer programs? Let us know which program
+        you'd like to join and we'll contact you with registration details.
+      </p>
+    </div>
+
+    <form action="mailto:creativecorner482@gmail.com" method="post" enctype="text/plain" class="contact-form">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="Name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="Email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" name="Phone">
+        </div>
+
+        <div class="form-group">
+          <label>Program</label>
+          <select name="Program">
+            <option>Choose a Program</option>
+            <option>3D Design Workshop</option>
+            <option>Sunday Night Art Bar</option>
+            <option>Summer Art Camp</option>
+            <option>Pottery Intensive</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Student Age</label>
+          <input type="text" name="Student Age">
+        </div>
+
+        <div class="form-group">
+          <label>Number of Participants</label>
+          <input type="text" name="Participants">
+        </div>
+
+      </div>
+
+      <div class="form-group full-width">
+        <label>Questions or Comments</label>
+        <textarea
+          name="Message"
+          rows="5"
+          placeholder="Tell us which program you're interested in or ask any questions."
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold">
+        Submit Inquiry
+      </button>
+
+    </form>
+
+  </div>
+</section>
 
   <footer>
     © 2026 Creative Corner • Summer Programs
