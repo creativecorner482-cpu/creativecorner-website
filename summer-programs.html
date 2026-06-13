@@ -427,75 +427,75 @@
 
   </main>
 
-<section class="contact-form-section">
-  <div class="container">
-
-    <div class="section-title">
-      <p>REGISTER TODAY</p>
-      <h2>Summer Program Inquiry</h2>
+<section class="booking" id="summer-inquiry">
+  <div class="form-grid">
+    <div class="contact-info">
+      <h2>Ready for a creative summer?</h2>
       <p>
-        Interested in one of our summer programs? Let us know which program
-        you'd like to join and we'll contact you with registration details.
+        Tell us which summer program you're interested in and we'll follow up with registration details.
       </p>
     </div>
 
-    <form action="mailto:creativecorner482@gmail.com" method="post" enctype="text/plain" class="contact-form">
+    <div class="form-card">
+      <h2>Summer Program Inquiry</h2>
+      <p>Send your summer program request to Creative Corner.</p>
 
-      <div class="form-grid">
+      <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Summer Program Inquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
 
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" name="Name" required>
+        <div class="form-row">
+          <div>
+            <label>Your Name</label>
+            <input name="Name" type="text" required>
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input name="Email" type="email" required>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" name="Email" required>
+        <div class="form-row">
+          <div>
+            <label>Phone</label>
+            <input name="Phone" type="tel">
+          </div>
+
+          <div>
+            <label>Program</label>
+            <select name="Program" required>
+              <option value="">Choose one</option>
+              <option>3D Design Workshop</option>
+              <option>Sunday Night Art Bar</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label>Phone</label>
-          <input type="tel" name="Phone">
+        <div class="form-row">
+          <div>
+            <label>Student Age</label>
+            <input name="Student Age" type="text" placeholder="Example: 10 years old">
+          </div>
+
+          <div>
+            <label>Number of Participants</label>
+            <input name="Participants" type="text" placeholder="Example: 1">
+          </div>
         </div>
 
-        <div class="form-group">
-          <label>Program</label>
-          <select name="Program">
-            <option>Choose a Program</option>
-            <option>3D Design Workshop</option>
-            <option>Sunday Night Art Bar</option>
-            <option>Summer Art Camp</option>
-            <option>Pottery Intensive</option>
-            <option>Other</option>
-          </select>
+        <div>
+          <label>Questions or Comments</label>
+          <textarea name="Message" placeholder="Tell us what you're interested in or ask any questions."></textarea>
         </div>
 
-        <div class="form-group">
-          <label>Student Age</label>
-          <input type="text" name="Student Age">
-        </div>
-
-        <div class="form-group">
-          <label>Number of Participants</label>
-          <input type="text" name="Participants">
-        </div>
-
-      </div>
-
-      <div class="form-group full-width">
-        <label>Questions or Comments</label>
-        <textarea
-          name="Message"
-          rows="5"
-          placeholder="Tell us which program you're interested in or ask any questions."
-        ></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-gold">
-        Submit Inquiry
-      </button>
-
-    </form>
+        <button class="btn btn-gold" type="submit">Send Inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
 
   </div>
 </section>
