@@ -315,6 +315,83 @@
       .event-poster img{
         height:auto;
       }
+
+       .booking{
+      padding:90px 7%;
+      background:#111;
+      color:white;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:430px 1fr;
+      gap:36px;
+      max-width:1220px;
+      margin:auto;
+    }
+
+    .contact-info,.form-card{
+      border-radius:22px;
+      padding:38px;
+    }
+
+    .contact-info{
+      background:
+        linear-gradient(135deg,rgba(204,27,140,.78),rgba(31,85,213,.78),rgba(143,189,0,.78)),
+        url('party-table.jpeg');
+      background-size:cover;
+      background-position:center;
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+
+    .contact-info h2,.form-card h2{
+      font-size:clamp(2.8rem,5vw,4.4rem);
+      margin-bottom:16px;
+    }
+
+    .form-card{
+      background:var(--card);
+      color:#111;
+    }
+
+    .form-card p{
+      color:var(--muted);
+      margin-bottom:28px;
+    }
+
+    form{display:grid;gap:16px}
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    label{
+      font-weight:800;
+      font-size:.9rem;
+      display:block;
+      margin-bottom:6px;
+    }
+
+    input,select,textarea{
+      width:100%;
+      border:1px solid #dcccae;
+      background:#fffaf2;
+      border-radius:9px;
+      padding:14px;
+      font:inherit;
+      color:#111;
+    }
+
+    textarea{
+      min-height:130px;
+      resize:vertical;
+    }
+
     }
 
     @media(max-width:760px){
