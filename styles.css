@@ -375,3 +375,98 @@ footer{
   }
 }
 
+  .cc-summer-form-section {
+  padding: 90px 7%;
+  background: #111;
+  color: white;
+}
+
+.cc-summer-form-grid {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 36px;
+  max-width: 1220px;
+  margin: auto;
+}
+
+.cc-summer-form-left {
+  background: linear-gradient(135deg, #cc1b8c, #1f55d5, #8fbd00);
+  border-radius: 22px;
+  padding: 38px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cc-summer-form-left h2,
+.cc-summer-form-card h2 {
+  font-family: 'Abril Fatface', serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.cc-summer-form-card {
+  background: #fbf6ed;
+  color: #111;
+  border-radius: 22px;
+  padding: 38px;
+}
+
+.cc-summer-form-card p {
+  color: #5f5a52;
+  margin-bottom: 28px;
+}
+
+.cc-summer-form-card form {
+  display: grid;
+  gap: 16px;
+}
+
+.cc-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cc-summer-form-card label {
+  font-weight: 800;
+  font-size: .9rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.cc-summer-form-card input,
+.cc-summer-form-card select,
+.cc-summer-form-card textarea {
+  width: 100%;
+  border: 1px solid #dcccae;
+  background: #fffaf2;
+  border-radius: 9px;
+  padding: 14px;
+  font: inherit;
+  color: #111;
+}
+
+.cc-summer-form-card textarea {
+  min-height: 130px;
+}
+
+.cc-submit-btn {
+  background: #c89512;
+  color: white;
+  border: none;
+  padding: 15px 26px;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media(max-width: 900px) {
+  .cc-summer-form-grid,
+  .cc-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
