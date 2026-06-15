@@ -429,8 +429,25 @@
           <div class="detail"><span>✓</span><span>Creative Corner, 482 Hempstead Ave, West Hempstead, NY</span></div>
         </div>
 
-        <a class="btn btn-blue" href="mailto:creativecorner482@gmail.com?subject=Sumi-e%20Paint%20Night%20RSVP">RSVP by Email →</a>
-      </div>
+        <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
+
+          <input type="hidden" name="_subject" value="Sumi-e Paint Night RSVP">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <input type="hidden" name="Event" value="Sumi-e Paint Night">
+
+          <input type="text" name="Name" placeholder="Your Name" required>
+
+          <input type="email" name="Email" placeholder="Your Email" required>
+
+       <button type="submit" class="btn btn-blue">
+          RSVP →
+      </button>
+
+    </form>     
+  </div>
+      
     </article>
 
     <article class="event-card art-bar">
