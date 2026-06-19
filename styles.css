@@ -468,5 +468,50 @@ footer{
   .cc-form-row {
     grid-template-columns: 1fr;
   }
+
+  .suggestion-box {
+  padding: 90px 8%;
+  background: #f8f4ea;
+}
+
+.suggestion-content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.suggestion-content h2 {
+  margin-bottom: 18px;
+}
+
+.suggestion-text {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.suggestion-form input,
+.suggestion-form textarea {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.suggestion-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.suggestion-form button {
+  align-self: center;
 }
 
