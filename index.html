@@ -147,47 +147,40 @@
     <a href="events.html" class="btn primary">View All Events</a>
   </div>
 </section>
-  </div>
-</section>
 
-  <section class="suggestion-box">
-  <div class="suggestion-content">
+<section class="cc-suggestion-section">
+  <div class="cc-suggestion-card">
 
-    <p class="eyebrow">WE'D LOVE YOUR IDEAS</p>
+    <p class="cc-suggestion-label">WE'D LOVE YOUR IDEAS</p>
 
     <h2>Suggestion Box</h2>
 
-    <p class="suggestion-text">
-      Are there any workshops, events, classes, or general ideas you'd like to see here at The Corner?
-      We love hearing from our community and are always looking for new ways to inspire creativity.
+    <p class="cc-suggestion-text">
+      Any workshops, events, or general ideas you'd like to see here at The Corner? Let us know!
     </p>
 
     <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
-
       <input type="hidden" name="_subject" value="Creative Corner Suggestion Box">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
-      <div class="suggestion-form">
+      <input
+        type="text"
+        name="Name"
+        placeholder="Your Name (optional)"
+        class="cc-suggestion-input"
+      >
 
-        <input
-          type="text"
-          name="Name"
-          placeholder="Your Name (optional)"
-        >
+      <textarea
+        name="Suggestion"
+        placeholder="Tell us what you'd like to see..."
+        required
+        class="cc-suggestion-textarea"
+      ></textarea>
 
-        <textarea
-          name="Suggestion"
-          placeholder="Tell us what you'd like to see..."
-          required
-        ></textarea>
-
-        <button type="submit" class="btn primary">
-          Submit Suggestion
-        </button>
-
-      </div>
-
+      <button type="submit" class="cc-suggestion-button">
+        Submit Suggestion
+      </button>
     </form>
 
   </div>
