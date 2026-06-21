@@ -304,106 +304,91 @@
       text-align:center;
     }
 
-    @media(max-width:1000px){
-      .event-card{
-        grid-template-columns:1fr;
-      }
+@media(max-width:1000px){
+  .event-card{
+    grid-template-columns:1fr;
+  }
 
-      .event-poster{
-        min-height:auto;
-      }
+  .event-poster{
+    min-height:auto;
+  }
 
-      .event-poster img{
-        height:auto;
-      }
+  .event-poster img{
+    height:auto;
+  }
+}
 
-       .booking{
-      padding:90px 7%;
-      background:#111;
-      color:white;
-    }
+.summer-inquiry-section{
+  padding:80px 7%;
+  background:#111;
+}
 
-    .form-grid{
-      display:grid;
-      grid-template-columns:430px 1fr;
-      gap:36px;
-      max-width:1220px;
-      margin:auto;
-    }
+.summer-inquiry-box{
+  max-width:900px;
+  margin:0 auto;
+  background:#fbf6ed;
+  color:#111;
+  padding:50px;
+  border-radius:24px;
+  box-shadow:0 12px 35px rgba(0,0,0,.18);
+}
 
-    .contact-info,.form-card{
-      border-radius:22px;
-      padding:38px;
-    }
+.summer-inquiry-box h2{
+  font-family:'Abril Fatface',serif;
+  font-size:3.5rem;
+  margin-bottom:14px;
+}
 
-    .contact-info{
-      background:
-        linear-gradient(135deg,rgba(204,27,140,.78),rgba(31,85,213,.78),rgba(143,189,0,.78)),
-        url('party-table.jpeg');
-      background-size:cover;
-      background-position:center;
-      min-height:520px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-    }
+.inquiry-intro{
+  color:#5f5a52;
+  margin-bottom:30px;
+}
 
-    .contact-info h2,.form-card h2{
-      font-size:clamp(2.8rem,5vw,4.4rem);
-      margin-bottom:16px;
-    }
+.summer-inquiry-box form{
+  display:grid;
+  gap:18px;
+}
 
-    .form-card{
-      background:var(--card);
-      color:#111;
-    }
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
 
-    .form-card p{
-      color:var(--muted);
-      margin-bottom:28px;
-    }
+.summer-inquiry-box input,
+.summer-inquiry-box select,
+.summer-inquiry-box textarea{
+  width:100%;
+  padding:15px;
+  border:1px solid #dcccae;
+  border-radius:10px;
+  background:#fffaf2;
+  font:inherit;
+}
 
-    form{display:grid;gap:16px}
+.summer-inquiry-box textarea{
+  min-height:140px;
+  resize:vertical;
+}
 
-    .form-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
+@media(max-width:760px){
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 
-    label{
-      font-weight:800;
-      font-size:.9rem;
-      display:block;
-      margin-bottom:6px;
-    }
+  .brand span{font-size:1.7rem}
+  .nav-links{gap:16px}
+  .event-info{padding:30px}
 
-    input,select,textarea{
-      width:100%;
-      border:1px solid #dcccae;
-      background:#fffaf2;
-      border-radius:9px;
-      padding:14px;
-      font:inherit;
-      color:#111;
-    }
+  .form-row{
+    grid-template-columns:1fr;
+  }
 
-    textarea{
-      min-height:130px;
-      resize:vertical;
-    }
-
-    @media(max-width:760px){
-      .navbar{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .brand span{font-size:1.7rem}
-      .nav-links{gap:16px}
-      .event-info{padding:30px}
-    }
-  </style>
+  .summer-inquiry-box{
+    padding:30px;
+  }
+}
 </head>
 
 <body>
@@ -541,12 +526,12 @@
 
   </div>
 </section>
+
+<footer>
+  © 2026 Creative Corner • Summer Programs
+</footer>
+
 </body>
-
-  <footer>
-    © 2026 Creative Corner • Summer Programs
-  </footer>
-
 </html>
 
 
