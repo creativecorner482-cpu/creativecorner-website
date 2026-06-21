@@ -502,74 +502,43 @@
 </article>
 
   </main>
+<section class="summer-inquiry-section">
+  <div class="summer-inquiry-box">
 
-<section class="booking" id="summer-inquiry">
-  <div class="form-grid">
-    <div class="contact-info">
-      <h2>Ready for a creative summer?</h2>
-      <p>
-        Tell us which summer program you're interested in and we'll follow up with registration details.
-      </p>
-    </div>
+    <h2>Summer Program Inquiry</h2>
 
-    <div class="form-card">
-      <h2>Summer Program Inquiry</h2>
-      <p>Send your summer program request to Creative Corner.</p>
+    <p class="inquiry-intro">
+      Interested in one of our summer programs? Send us a message and we'll get back to you with registration details.
+    </p>
 
-      <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Summer Program Inquiry">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
+    <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
 
-        <div class="form-row">
-          <div>
-            <label>Your Name</label>
-            <input name="Name" type="text" required>
-          </div>
+      <input type="hidden" name="_subject" value="Summer Program Inquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
 
-          <div>
-            <label>Email</label>
-            <input name="Email" type="email" required>
-          </div>
-        </div>
+      <div class="form-row">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+      </div>
 
-        <div class="form-row">
-          <div>
-            <label>Phone</label>
-            <input name="Phone" type="tel">
-          </div>
+      <div class="form-row">
+        <input type="tel" name="Phone" placeholder="Phone Number">
+        <select name="Program">
+          <option>Select a Program</option>
+          <option>3D Design Workshop</option>
+          <option>Sunday Night Art Bar</option>
+        </select>
+      </div>
 
-          <div>
-            <label>Program</label>
-            <select name="Program" required>
-              <option value="">Choose one</option>
-              <option>3D Design Workshop</option>
-              <option>Sunday Night Art Bar</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
+      <textarea name="Message" placeholder="Tell us which program you're interested in or ask any questions."></textarea>
 
-        <div class="form-row">
-          <div>
-            <label>Student Age</label>
-            <input name="Student Age" type="text" placeholder="Example: 10 years old">
-          </div>
+      <button type="submit" class="btn primary">
+        Send Inquiry
+      </button>
 
-          <div>
-            <label>Number of Participants</label>
-            <input name="Participants" type="text" placeholder="Example: 1">
-          </div>
-        </div>
+    </form>
 
-        <div>
-          <label>Questions or Comments</label>
-          <textarea name="Message" placeholder="Tell us what you're interested in or ask any questions."></textarea>
-        </div>
-
-        <button class="btn btn-gold" type="submit">Send Inquiry</button>
-      </form>
-    </div>
   </div>
 </section>
 </body>
