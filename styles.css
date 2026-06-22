@@ -385,42 +385,42 @@ footer{
 }
 
 .suggestion-section{
-  padding:70px 8%;
+  padding:80px 8%;
   background:#f7f3ec;
 }
 
 .suggestion-card{
   max-width:1000px;
   margin:0 auto;
-  background:white;
-  border-radius:22px;
-  padding:42px;
-  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  background:#fffaf2;
+  border:2px solid #eadcc2;
+  border-radius:28px;
+  padding:50px;
+  box-shadow:0 14px 40px rgba(0,0,0,.12);
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:32px;
+  gap:36px;
   align-items:center;
 }
 
 .suggestion-label{
   color:#c49408;
   letter-spacing:2px;
-  font-weight:700;
+  font-weight:800;
   margin-bottom:12px;
 }
 
 .suggestion-card h2{
   font-family:'Abril Fatface',serif;
-  font-size:3.5rem;
+  font-size:3.8rem;
   margin-bottom:18px;
 }
 
-.suggestion-card p{
-  line-height:1.7;
-  color:#444;
-}
-
 .suggestion-card form{
+  background:white;
+  border:1px solid #eadcc2;
+  border-radius:18px;
+  padding:26px;
   display:grid;
   gap:14px;
 }
@@ -436,7 +436,6 @@ footer{
 
 .suggestion-card textarea{
   min-height:130px;
-  resize:vertical;
 }
 
 @media(max-width:768px){
