@@ -447,6 +447,11 @@ footer{
   resize:vertical;
 }
 
+.suggestion-card .btn{
+  width:100%;
+  justify-content:center;
+}
+
 /* tablet */
 @media(max-width:900px){
   .suggestion-card{
@@ -482,6 +487,6 @@ footer{
   .suggestion-card input,
   .suggestion-card textarea{
     padding:13px;
-    font-size:16px; /* prevents weird iPhone zoom */
+    font-size:16px;
   }
 }
