@@ -303,39 +303,120 @@
       text-align:center;
     }
 
-    @media(max-width:1000px){
-      .event-card {
-        display: grid;
-        grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
-    }
+   @media(max-width:1000px){
+  .event-card{
+    grid-template-columns:1fr;
+  }
 
-      .event-info {
-        min-width: 0;
-    }
+  .event-poster{
+    min-height:auto;
+  }
 
-      .event-poster{
-        min-height:auto;
-      }
+  .event-poster img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+  }
 
-     .event-poster img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-    }
+  .event-info{
+    padding:32px;
+  }
 
-    @media(max-width:760px){
-      .navbar{
-        flex-direction:column;
-        align-items:flex-start;
-      }
+  .event-info h2{
+    font-size:2.5rem;
+  }
 
-      .brand span{font-size:1.7rem}
-      .nav-links{gap:16px}
-      .event-info{padding:30px}
-    }
-  </style>
+  .price{
+    font-size:2.3rem;
+  }
+}
+
+@media(max-width:760px){
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .brand span{
+    font-size:1.7rem;
+  }
+
+  .nav-links{
+    gap:16px;
+  }
+
+  .events-wrap{
+    padding:30px 5% 70px;
+    gap:28px;
+  }
+
+  .event-card{
+    border-radius:18px;
+  }
+
+  .event-poster img{
+    height:220px;
+  }
+
+  .event-info{
+    padding:22px;
+  }
+
+  .event-info h2{
+    font-size:1.9rem;
+    line-height:1.05;
+  }
+
+  .event-info p{
+    font-size:1rem;
+    margin-bottom:20px;
+  }
+
+  .event-meta{
+    gap:8px;
+    margin-bottom:16px;
+  }
+
+  .pill{
+    font-size:.8rem;
+    padding:7px 12px;
+  }
+
+  .details{
+    gap:10px;
+    margin-bottom:22px;
+  }
+
+  .detail{
+    gap:10px;
+    font-size:.95rem;
+  }
+
+  .price{
+    font-size:1.9rem;
+    margin:0 0 18px;
+  }
+
+  .btn,
+  .btn-gold,
+  .btn-dark,
+  .btn-pink,
+  .btn-blue{
+    width:100%;
+  }
+
+  .cta-section{
+    margin:0 5% 70px;
+    padding:50px 24px;
+    border-radius:22px;
+  }
+
+  .cta-section h2{
+    font-size:2.3rem;
+  }
+}
+ </style>
 </head>
 
 <body>
