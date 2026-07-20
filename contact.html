@@ -1,165 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Creative Corner</title>
 
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Contact Us | Creative Corner</title>
 
-  <style>
-    .contact-page {
-      padding: 120px 8%;
-      background: #f5f1e8;
-      min-height: 100vh;
-    }
+<link rel="stylesheet" href="styles.css">
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-top: 50px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .contact-card,
-    .form-card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .contact-page h1 {
-      font-family: 'Abril Fatface', serif;
-      font-size: 4rem;
-      margin-bottom: 20px;
-      color: #111;
-    }
+<style>
 
-    .contact-page p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #444;
-    }
-
-    .contact-info {
-      margin-top: 30px;
-    }
-
-    .contact-info p {
-      margin-bottom: 20px;
-    }
-
-    .map-link {
-      display: inline-block;
-      margin-top: 20px;
-      background: #111;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .form-card form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    input,
-    textarea {
-      padding: 16px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-
-    textarea {
-      min-height: 160px;
-      resize: vertical;
-    }
-
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      padding: 16px;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    @media (max-width: 900px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-page h1 {
-        font-size: 3rem;
-      }
-    }
-
-    .contact-section{
-      padding:90px 7%;
-    background:#111;
-    }
-
-    .contact-grid{
-      max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:380px 1fr;
-    gap:40px;
-    align-items:stretch;
-}
-
-.contact-details{
-    background:linear-gradient(135deg,#cc1b8c,#1f55d5,#8fbd00);
+.contact-hero{
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("contact-banner.jpg");
+    background-size:cover;
+    background-position:center;
     color:white;
-    border-radius:24px;
-    padding:40px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    padding:120px 8%;
+    text-align:center;
 }
 
-.contact-details h2{
+.contact-hero h1{
     font-family:'Abril Fatface',serif;
-    font-size:3rem;
+    font-size:4.8rem;
     margin-bottom:20px;
 }
 
-.contact-details p{
-    margin-bottom:30px;
+.contact-hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.2rem;
     line-height:1.7;
+}
+
+.contact-wrapper{
+    padding:90px 8%;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.info-card{
+    background:
+    linear-gradient(135deg,#cc1b8c,#1f55d5,#8fbd00);
+    color:white;
+    padding:40px;
+    border-radius:26px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.info-card h2{
+    font-family:'Abril Fatface',serif;
+    font-size:3rem;
+    margin-bottom:22px;
+}
+
+.info-card p{
+    margin-bottom:24px;
+    line-height:1.8;
 }
 
 .contact-item{
     margin-bottom:24px;
-    line-height:1.6;
 }
 
-.contact-card{
-    background:#fbf6ed;
-    border-radius:24px;
+.contact-item strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.info-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:28px;
+}
+
+.info-buttons .btn{
+    text-align:center;
+}
+
+.form-card{
+    background:white;
     padding:40px;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    border-radius:26px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
 
-.contact-card h2{
+.form-card h2{
     font-family:'Abril Fatface',serif;
     font-size:3rem;
-    margin-bottom:25px;
+    margin-bottom:12px;
 }
 
-.contact-card form{
+.form-card p{
+    color:#555;
+    margin-bottom:28px;
+}
+
+.form-card form{
     display:grid;
     gap:18px;
 }
@@ -170,40 +122,72 @@
     gap:18px;
 }
 
-.contact-card input,
-.contact-card textarea{
+.form-card input,
+.form-card textarea{
     width:100%;
     padding:16px;
-    border:1px solid #dcccae;
-    border-radius:12px;
-    background:#fffaf2;
+    border:1px solid #ddd;
+    border-radius:14px;
+    background:#faf7f1;
     font-size:1rem;
+    font-family:inherit;
 }
 
-.contact-card textarea{
+.form-card textarea{
     min-height:180px;
     resize:vertical;
 }
 
+.form-card button{
+    width:220px;
+}
+
+.map-section{
+    padding:0 8% 90px;
+}
+
+.map-card{
+    overflow:hidden;
+    border-radius:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.map-card iframe{
+    width:100%;
+    height:450px;
+    border:0;
+}
+
 @media(max-width:900px){
 
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
+.contact-grid{
+grid-template-columns:1fr;
+}
 
-    .form-row{
-        grid-template-columns:1fr;
-    }
+.form-row{
+grid-template-columns:1fr;
+}
+
+.contact-hero h1{
+font-size:3rem;
+}
+
+.form-card button{
+width:100%;
+}
 
 }
-  </style>
+
+</style>
+
 </head>
 
 <body>
 
 <header class="navbar">
+
   <div class="logo">
-    <img src="logo.png" alt="Creative Corner logo">
+    <img src="logo.png" alt="Creative Corner Logo">
     <span>Creative Corner</span>
   </div>
 
@@ -212,118 +196,166 @@
     <a href="lessons.html">Lessons</a>
     <a href="events.html">Events</a>
     <a href="summer-programs.html">Summer Programs</a>
-    <a href="parties.html">Parties</a>      
+    <a href="parties.html">Parties</a>
     <a href="contact.html">Contact</a>
   </nav>
+
 </header>
 
-<section class="contact-page">
+<section class="contact-hero">
 
-  <p style="letter-spacing:3px; color:#b08d2f;">GET IN TOUCH</p>
-  <h1>Contact Us</h1>
+    <h1>Let's Create Together</h1>
 
-  <div class="contact-grid">
-
-    <div class="contact-card">
-
-      <p>
-        We'd love to hear from you. Reach out with questions about lessons,
-        parties, workshops, or upcoming events.
-      </p>
-
-      <div class="contact-info">
-
-        <p>
-          <strong>Address:</strong><br>
-          482 Hempstead Avenue<br>
-          West Hempstead, NY 11552
-        </p>
-
-        <p>
-          <strong>Phone:</strong><br>
-          (516) 385-8782
-        </p>
-
-        <p>
-          <strong>Email:</strong><br>
-          creativecorner482@gmail.com
-        </p>
-
-        <a
-          class="map-link"
-          href="https://maps.google.com/?q=482+Hempstead+Avenue+West+Hempstead+NY+11552"
-          target="_blank"
-        >
-          Open in Google Maps
-        </a>
-        <a
-          class="map-link"
-          href="https://paa.ge/creativecorner482"
-          target="_blank"
-          style="margin-left:12px;"
-        >
-          Follow Our Socials
-        </a>
-    </div>
-
-   <section class="contact-section">
-
-  <div class="contact-grid">
-
-    <div class="contact-details">
-      <h2>Get In Touch</h2>
-
-      <p>
-        We'd love to hear from you! Whether you're interested in lessons,
-        workshops, parties, or have a general question, send us a message.
-      </p>
-
-      <div class="contact-item">
-        <strong>Email</strong><br>
-        creativecorner482@gmail.com
-      </div>
-
-      <div class="contact-item">
-        <strong>Location</strong><br>
-        482 Hempstead Avenue<br>
-        West Hempstead, NY 11552
-      </div>
-
-      <div class="contact-item">
-        <strong>Hours</strong><br>
-        By Appointment<br>
-        Evenings & Weekends Available
-      </div>
-
-    </div>
-
-    <div class="contact-card">
-
-      <h2>Send Us a Message</h2>
-
-      <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
-
-        <input type="hidden" name="_subject" value="Creative Corner Contact Form">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-
-        <div class="form-row">
-          <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="Email" placeholder="Email Address" required>
-        </div>
-
-        <input type="text" name="Subject" placeholder="Subject">
-
-        <textarea name="Message" placeholder="How can we help?" required></textarea>
-
-        <button class="btn btn-gold" type="submit">
-          Send Message
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
+    <p>
+        Have questions about lessons, workshops, parties, or upcoming events?
+        We'd love to hear from you and help you get started.
+    </p>
 
 </section>
+
+
+<section class="contact-wrapper">
+
+<div class="contact-grid">
+
+    <!-- LEFT CARD -->
+
+    <div class="info-card">
+
+        <h2>Visit Creative Corner</h2>
+
+        <p>
+            Whether you're interested in private lessons, pottery,
+            workshops, birthday parties, or music events,
+            we're always happy to answer any of your questions.
+        </p>
+
+        <div class="contact-item">
+            <strong>📍 Address</strong>
+            482 Hempstead Avenue<br>
+            West Hempstead, NY 11552
+        </div>
+
+        <div class="contact-item">
+            <strong>📞 Phone</strong>
+            (516) 385-8782
+        </div>
+
+        <div class="contact-item">
+            <strong>✉ Email</strong>
+            creativecorner482@gmail.com
+        </div>
+
+        <div class="contact-item">
+            <strong>🕒 Hours</strong>
+            By Appointment<br>
+            Evenings & Weekends
+        </div>
+
+        <div class="info-buttons">
+
+            <a
+                class="btn primary"
+                href="https://maps.google.com/?q=482+Hempstead+Avenue+West+Hempstead+NY+11552"
+                target="_blank">
+
+                Open Google Maps
+
+            </a>
+
+            <a
+                class="btn secondary"
+                href="https://paa.ge/creativecorner482"
+                target="_blank">
+
+                Follow Our Socials
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RIGHT CARD -->
+
+    <div class="form-card">
+
+        <h2>Send Us a Message</h2>
+
+        <p>
+            Fill out the form below and we'll get back to you as soon as we can.
+        </p>
+
+        <form action="https://formsubmit.co/creativecorner482@gmail.com" method="POST">
+
+            <input type="hidden" name="_subject" value="Creative Corner Contact Form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="form-row">
+
+                <input
+                    type="text"
+                    name="Name"
+                    placeholder="Your Name"
+                    required>
+
+                <input
+                    type="email"
+                    name="Email"
+                    placeholder="Email Address"
+                    required>
+
+            </div>
+
+            <input
+                type="text"
+                name="Subject"
+                placeholder="Subject">
+
+            <textarea
+                name="Message"
+                placeholder="Tell us about lessons, parties, workshops, events, or anything else..."
+                required></textarea>
+
+            <button class="btn primary" type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<section class="map-section">
+
+<div class="map-card">
+
+<iframe
+src="https://maps.google.com/maps?q=482%20Hempstead%20Avenue%20West%20Hempstead%20NY%2011552&t=&z=15&ie=UTF8&iwloc=&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 Creative Corner • West Hempstead, NY
+</p>
+
+</footer>
+
+</body>
+</html>
