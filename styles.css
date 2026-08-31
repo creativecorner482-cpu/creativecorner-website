@@ -490,3 +490,58 @@ footer{
     font-size:16px;
   }
 }
+
+.coming-soon-card{
+  max-width:900px;
+  margin:10px auto 80px;
+  padding:70px 40px;
+  background:#fbf6ed;
+  border:1px solid #eadcc2;
+  border-radius:24px;
+  box-shadow:0 12px 35px rgba(0,0,0,.06);
+  text-align:center;
+}
+
+.coming-soon-icon{
+  width:64px;
+  height:64px;
+  margin:0 auto 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#d7a10d;
+  color:white;
+  font-size:2rem;
+}
+
+.coming-soon-card h3{
+  font-family:'Abril Fatface',serif;
+  font-size:3rem;
+  margin-bottom:16px;
+}
+
+.coming-soon-card p{
+  max-width:600px;
+  margin:auto;
+  color:#5f5a52;
+  font-size:1.1rem;
+  line-height:1.7;
+}
+
+@media(max-width:600px){
+
+  .coming-soon-card{
+    margin:10px 7% 60px;
+    padding:50px 25px;
+  }
+
+  .coming-soon-card h3{
+    font-size:2.4rem;
+  }
+
+  .coming-soon-card p{
+    font-size:1rem;
+  }
+
+}
