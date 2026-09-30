@@ -545,3 +545,22 @@ footer{
   }
 
 }
+
+.walk-in-card{
+  border:3px solid #c89512;
+  background:linear-gradient(135deg,#fffaf2,#f8f2e8);
+}
+
+.walk-in-card h3{
+  color:#c89512;
+}
+
+.walk-in-note{
+  margin-top:20px;
+  padding:14px 16px;
+  background:#f1e6d0;
+  border-radius:12px;
+  font-size:.9rem;
+  color:#5f5a52;
+  line-height:1.5;
+}
